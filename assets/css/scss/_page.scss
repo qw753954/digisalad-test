@@ -411,7 +411,7 @@ section:not(.banner) {
     & > div {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
       position: relative;
       @include pad {
         flex-direction: column;
@@ -446,7 +446,7 @@ section:not(.banner) {
       }
     }
     .carousel-body {
-      width: 50%;
+      width: 45%;
       padding: 40px;
       text-align: left;
       h4 {

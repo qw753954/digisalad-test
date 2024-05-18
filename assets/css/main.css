@@ -1363,7 +1363,7 @@ section:not(.banner).carousel::after {
 section:not(.banner).carousel > div {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   position: relative;
 }
 @media (max-width: 1024px) {
@@ -1405,7 +1405,7 @@ section:not(.banner).carousel .carousel-image img {
   border-radius: 30px;
 }
 section:not(.banner).carousel .carousel-body {
-  width: 50%;
+  width: 45%;
   padding: 40px;
   text-align: left;
 }
