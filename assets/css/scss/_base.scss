@@ -73,4 +73,10 @@ small, .small {
   max-width: 1010px;
   padding-left: 20px;
   padding-right: 20px;
+  @include pad {
+    max-width: 780px;
+  }
+  @include phone {
+    max-width: 480px;
+  }
 }

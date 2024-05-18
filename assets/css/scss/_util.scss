@@ -2,16 +2,6 @@
   .text-#{$item} {
     color: $value;
   }
-  @include pad {
-    .text-md-#{$item} {
-      color: $value;
-    }
-  }
-  @include phone {
-    .text-sm-#{$item} {
-      color: $value;
-    }
-  }
   .bg-#{$item} {
     background: $value;
   }
@@ -78,6 +68,7 @@
     text-align: left;
   }
 }
+
 
 @each $i in $displays {
   .d-#{$i} {

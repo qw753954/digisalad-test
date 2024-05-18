@@ -207,21 +207,23 @@
 
   <section class="carousel">
     <div class="container">
-      <div class="carousel-image">
-        <img src="assets/images/menu4.png" alt="carousel image">
+      <div class="carousel-head">
+        <button type="button" id="carousel-prev">&lt;</button>
+        <button type="button" id="carousel-next">&gt;</button>
+        <div class="carousel-image">
+          <img src="assets/images/menu4.png" alt="carousel image">
+        </div>
       </div>
       <div class="carousel-body">
-        <span>HIGHLIGHTED SHOWCASE</span>
+        <small>HIGHLIGHTED SHOWCASE</small>
         <h4>LP CLUB MOBILE APP</h4>
-        <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+        <p>
+          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
           tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc
-          eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante,
-          eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis.
-          Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras
-          lobortis molestie faucibus.</p>
+          eu tellus tortor. Etiam at condimentum nisl.
+        </p>
       </div>
-      <button type="button" id="carousel-prev">&lt;</button>
-      <button type="button" id="carousel-next">&gt;</button>
+      <a href="#" class="btn-square bg-pri">VIEW PROJECT <span></span></a>
     </div>
   </section>
 
@@ -389,7 +391,6 @@
 
     AOS.init({
       duration: 800,
-      offset: 400,
     });
   </script>
 </body>
