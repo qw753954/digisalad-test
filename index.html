@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
 
   <link rel="stylesheet" href="https://use.typekit.net/wel8ibk.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -191,8 +191,8 @@
   </section>
 
   <section class="brand">
-    <h3 class="mx-auto" data-aos="fade-up" data-aos-offset="800">OUR BRAND EXPERIENCE<span></span></h3>
-    <div class="container" data-aos="fade-up" data-aos-offset="800">
+    <h3 class="mx-auto" data-aos="fade-up" data-aos-offset="200">OUR BRAND EXPERIENCE<span></span></h3>
+    <div class="container" data-aos="fade-up" data-aos-offset="200">
       <p>
         Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
         urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
@@ -207,6 +207,11 @@
 
   <section class="carousel">
     <div class="container">
+      <ul class="carousel-pagination">
+        <span></span>
+        <span></span>
+        <span></span>
+      </ul>
       <div class="carousel-head">
         <button type="button" id="carousel-prev">&lt;</button>
         <button type="button" id="carousel-next">&gt;</button>
@@ -271,6 +276,9 @@
       const carousel = document.querySelector('.carousel')
       const image = document.querySelector('.carousel-image img')
       const title = document.querySelector('.carousel-body h4')
+      const pageNow = document.querySelector('.carousel-pagination span:first-child')
+      const pageTotal = document.querySelector('.carousel-pagination span:last-child')
+
       const carousels = [
         {
           img: 'menu4.png',
@@ -289,6 +297,8 @@
       ]
       max = carousels.length - 1
 
+      pageNow.textContent = String(now + 1).padStart(2, '0')
+      pageTotal.textContent = String(max + 1).padStart(2, '0')
       carousel.style.backgroundImage = `url('assets/images/${carousels[now].img}')`
       image.src = `assets/images/${carousels[now].img}`
       title.textContent = carousels[now].title
