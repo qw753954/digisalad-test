@@ -1,0 +1,881 @@
+header {
+  height: 100px;
+  padding: 25px 80px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1200;
+  transition: .3s;
+  @include phone {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &.scroll-down {
+    background: $white;
+    .btn-burger {
+      filter: brightness(0);
+    }
+    .logo {
+      display: block;
+    }
+  }
+  .logo {
+    background: url(../images/logo-dark.svg) no-repeat center/ contain;
+    width: 120px;
+    height: 50px;
+    text-indent: 101%;
+    overflow: hidden;
+    display: none;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  button {
+    font-size: 13px;
+    border-radius: 50rem;
+    padding: 10px 12px;
+    letter-spacing: 1.14px;
+  }
+}
+
+nav {
+  background: url(/assets/images/banner.png) no-repeat center top/ cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding: 25px 80px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1800;
+  transform: translateY(-50%);
+  transition: all .65s;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  @include phone {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#585880 0%, #585880 40%, #26C6D0 70%);
+    top: 0;
+    left: 0;
+    opacity: .8;
+    z-index: -1;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  button {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: $white;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  .card {
+    cursor: pointer;
+    padding: 30px 20px;
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: .5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:nth-child(1) {
+      align-items: end;
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    &:nth-child(2) {
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+      grid-area: 1 / 2 / 3 / 3;
+    }
+    &:nth-child(3) {
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+      grid-area: 2 / 3 / 3 / 4;
+      img {
+        height: 50px;
+      }
+    }
+    &:nth-child(4) {
+      align-items: end;
+      grid-area: 3 / 1 / 4 / 2;
+    }
+    &:nth-child(5) {
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+      grid-area: 3 / 2 / 5 / 3;
+    }
+    &:nth-child(6) {
+      background: $white;
+      align-items: center;
+      grid-area: 3 / 3 / 4 / 4;
+    }
+    @include pad {
+      grid-area: auto !important;
+      &:not(:last-child) {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &:nth-child(1), &:nth-child(2) {
+        align-items: center;
+      }
+      &:hover .card-image {
+        transform: translateX(0);
+      }
+    }
+    &-list {
+      padding: 20px 40px;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr 1fr;
+      grid-template-rows: 30px repeat(2, 1fr) 30px;
+      grid-column-gap: 40px;
+      grid-row-gap: 40px;
+      flex-grow: 1;
+      min-height: 0;
+      @include pad {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+    }
+    &-image {
+      margin: 5px;
+      @include pad {
+        img {
+          height: 50px;
+        }
+        transform: translateX(120px);
+        transition: .4s;
+      }
+    }
+    &-body {
+      margin: 5px;
+      color: $white;
+      letter-spacing: 1.8px;
+      span {
+        bottom: 4px;
+      }
+    }
+    &:last-child {
+      h3 {
+        color: $pri;
+      }
+      p {
+        color: $dark;
+      }
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background: url(/assets/images/banner.png) no-repeat fixed center top/ cover;
+  border-radius: 0 0 50px 50px;
+  z-index: 1;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 0 0 50px 50px;
+    top: 0;
+    z-index: -1;
+  }
+  & div {
+    padding: 0 40px;
+  }
+  &-title {
+    color: $white;
+    position: relative;
+    letter-spacing: 9.17px;
+    img {
+      display: block;
+    }
+  }
+  &-title-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  &-decoration {
+    text-align: center;
+    padding-bottom: 60px !important;
+    position: relative;
+    p {
+      color: white;
+      font-size: 14px;
+    }
+    span {
+      position: absolute;
+      bottom: -86px;
+      width: 1px;
+      height: 130px;
+      background: linear-gradient($white 0%, $white 33%, $dark 33%, $dark 100%);
+    }
+  }
+  &-text {
+    position: absolute;
+    top: 50%;
+    color: $white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2.22px;
+    transform: rotate(270deg);
+    transform-origin: 20% 0%;
+    z-index: 1;
+    @include pad {
+      opacity: .5;
+      transform: none;
+      top: 20px;
+    }
+    @include phone {
+      opacity: 0;
+    }
+    span {
+      width: 113px;
+      height: 2px;
+      display: block;
+      margin-right: 15px;
+      background: $white;
+    }
+  }
+  @include phone {
+    img {
+      height: 50px;
+    }
+  }
+}
+
+section:not(.banner) {
+  border-radius: 40px;
+  &.block {
+    padding: 83px 58px;
+    background: $white;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 1;
+    @include pad {
+      margin: 0 30px !important;
+      padding: 40px 30px;
+    }
+    &.block-right {
+      border-radius: 40px 0 40px 40px;
+      margin-left: 98px;
+      h3 {
+        margin-bottom: 24px;
+      }
+      p {
+        width: 40%;
+      }
+      @include pad {
+        & > div {
+          flex-direction: column;
+          align-items: start;
+        }
+        p {
+          width: 100%;
+        }
+      }
+    }
+    &.block-left {
+      color: $white;
+      letter-spacing: 2px;
+      border-radius: 40px 40px 40px 0px;
+      margin-right: 98px;
+      background: url(../../assets/images/bg.jpeg) no-repeat center/ cover;
+      position: absolute;
+      overflow: hidden;
+      z-index: 1;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba($purple, .6);
+        backdrop-filter: blur(5px);
+        z-index: -1;
+      }
+      & > div {
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+    & > div {
+      padding: 0;
+      display: flex;
+    }
+    p {
+      text-align: left;
+    }
+  }
+  &.video {
+    background: $light;
+    padding: 126px 0 70px;
+    & > div {
+      padding-top: 70px;
+      padding-bottom: 0;
+    }
+  }
+  &.service, &.brand {
+    padding: 104px 0;
+    @include pad {
+      padding: 60px 0;
+    }
+  }
+  &.service {
+    background: $pri;
+    position: relative;
+    p {
+      color: $white;
+    }
+  }
+  &.brand {
+    background: $white;
+    p {
+      padding-top: 0;
+    }
+  }
+  &.carousel {
+    color: $white;
+    background: #fff no-repeat center/ cover;
+    border-radius: 0 0 40px 40px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .75);
+      backdrop-filter: blur(5px);
+      z-index: -2;
+    }
+    & > div {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      position: relative;
+      @include pad {
+        flex-direction: column;
+      }
+    }
+    .carousel-image {
+      position: relative;
+      width: 50%;
+      padding-top: 50%;
+      margin: auto;
+      @include pad {
+        width: 95%;
+        height: 95%;
+        margin: auto;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+    }
+    .carousel-body {
+      width: 50%;
+      padding: 40px;
+      h4 {
+        font-size: 32px;
+        letter-spacing: 3.64px;
+        position: relative;
+        width: max-content;
+        margin-bottom: 40px;
+        &::before, &::after {
+          content: '';
+          position: absolute;
+        }
+        &::before {
+          left: -6px;
+          right: -6px;
+          bottom: 4px;
+          height: 6px;
+          background: $pri;
+          z-index: -1;
+        }
+        &::after {
+          right: -24px;
+          bottom: 4px;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background: $danger;
+        }
+      }
+      span {
+        display: block;
+        font-weight: bold;
+        letter-spacing: 2.22px;
+        margin-bottom: 20px;
+      }
+      @include pad {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        h4 {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        span {
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+    button {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      font-size: 36px;
+      color: $white;
+      background: $pri;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin: 0 16px;
+      &:first-of-type {
+        left: 0;
+        transform: translateX(-150%);
+      }
+      &:last-of-type {
+        right: 0;
+        transform: translateX(150%);
+      }
+    }
+  }
+  & > div {
+    margin: auto;
+    text-align: center;
+    padding-top: 43px;
+    padding-bottom: 43px;
+    @include pad {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+  h3 {
+    width: max-content;
+    position: relative;
+    letter-spacing: 3.64px;
+    padding: 16px 30px 16px 23px;
+    background: url(../images/wave-light.svg) repeat no-repeat left bottom;
+    &.dark {
+      color: $white;
+      background-image: url(../images/wave-dark.svg);
+    }
+    span {
+      position: absolute;
+      bottom: 20px;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      margin-left: 10px;
+      background: $danger;
+    }
+  }
+  p {
+    margin-bottom: 30px;
+    line-height: 1.75;
+  }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin-bottom: 32px;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.award-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  @include pad {
+    width: 100%;
+  }
+  &-item {
+    width: 50%;
+  }
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  &-item {
+    width: 30%;
+    max-width: 350px;
+    margin-top: 60px;
+    padding: 0 12px;
+    color: $white;
+  }
+  &-image {
+    width: 108px;
+    height: 108px;
+    background: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  &-title {
+    height: 4em;
+    color: $white;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-text {
+    padding: 0 !important;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  @include pad {
+    &-item {
+      width: 40%;
+      margin-top: 48px;
+    }
+    &-title {
+      height: 3.5em;
+    }
+  }
+  @include phone {
+    &-item {
+      width: 100%;
+    }
+  }
+}
+
+.founder {
+  &-title {
+    width: 30%;
+    img {
+      border-radius: 50rem;
+    }
+    h4 {
+      margin: 10px 0;
+    }
+    em {
+      font-style: italic;
+    }
+  }
+  &-content {
+    width: 70%;
+    img {
+      display: inline-block;
+      margin: auto;
+    }
+    span {
+      color: $warning;
+      font-weight: bold;
+    }
+  }
+  @include pad {
+    &-title {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    &-content {
+      width: 100%;
+      img {
+        top: 0;
+        transform: translateX(50px);
+        position: absolute;
+      }
+    }
+  }
+}
+
+.btn-burger {
+  position: relative;
+  height: 22px;
+  width: 30px;
+  margin-left: 44px;
+  &:hover span::after {
+    width: 30px;
+    transition: .3s;
+  }
+  span {
+    width: 30px;
+    height: 3px;
+    display: block;
+    background: white;
+    border-radius: 3px;
+    &::after, &::before {
+      content: "";
+      height: 3px;
+      border-radius: 3px;
+      background: white;
+      position: absolute;
+      margin: auto;
+    }
+    &::after {
+      right: 0;
+      bottom: 0;
+      width: 26px;
+    }
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 30px;
+    }
+  }
+}
+
+.btn-square {
+  color: $white;
+  letter-spacing: 2.22px;
+  padding: 36px 33px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  &::after {
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    position: absolute;
+    background: $danger;
+    transition: transform .3s ease-in-out;
+    z-index: -1;
+  }
+  span {
+    display: inline-block;
+    width: 70px;
+    height: 2px;
+    background: $white;
+    vertical-align: middle;
+    margin-left: 15px;
+  }
+  &.btn-lg {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.btn-round {
+  border-radius: 25rem;
+  border: 2px solid $white;
+  color: $white;
+  padding: 20px 35px;
+  transition: .3s;
+  &:hover {
+    background: $white;
+    color: $pri;
+  }
+}
+
+.btn-view-more {
+  color: $white;
+  letter-spacing: 2px;
+  margin-top: 102px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  @include phone {
+    margin-top: 80px;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    left: -6px;
+    right: -6px;
+    bottom: 0px;
+    height: 8px;
+    background: $warning;
+    z-index: -1;
+    transition: .4s cubic-bezier(.68,-.55,.265,1.55);
+  }
+  &:hover::after {
+    height: 20px;
+  }
+}
+
+.highlight {
+  display: inline-block;
+  position: relative;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+  }
+  &::before {
+    left: -6px;
+    right: 4px;
+    bottom: 17px;
+    height: 8px;
+    background: $pri;
+    z-index: -1;
+  }
+  &::after {
+    right: -10px;
+    bottom: 20px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: $danger;
+  }
+  br {
+    display: none;
+    @include phone {
+      display: block;
+    }
+  }
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1800;
+  background: $pri-linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid $white;
+    animation: loading 2s infinite ease;
+    span {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: $white;
+      animation: loading-in 2s infinite ease-in;
+    }
+  }
+  &.hide {
+    opacity: 0;
+    transition: 1s;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-in {
+  0% {
+    height: 0;
+  }
+  25% {
+    height: 0;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@for $i from 1 through 6 {
+  .card:nth-child(#{$i})::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(nth($card-colors, $i), .8);
+    z-index: -1;
+  }
+}

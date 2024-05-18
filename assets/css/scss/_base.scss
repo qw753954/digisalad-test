@@ -1,0 +1,76 @@
+body {
+  background: #fff;
+  font-family: "proxima-nova", "Roboto";
+  line-height: 1.2;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-family: "proxima-nova", "Roboto";
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, button {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1, .h1 {
+  font-size: 42px;
+  @include phone {
+   font-size: 36px; 
+  }
+}
+h2, .h2 {
+  font-size: 38px;
+  line-height: 1.8;
+  @include phone {
+    font-size: 32px; 
+   }
+}
+h3, .h3 {
+  font-size: 28px;
+  @include phone {
+    font-size: 22px; 
+   }
+}
+h4, .h4 {
+  font-size: 20px;
+  @include phone {
+    font-size: 18px; 
+  }
+}
+h5, .h5 {
+  font-size: 18px;
+  @include phone {
+    font-size: 16px; 
+  }
+}
+
+small, .small {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1010px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
