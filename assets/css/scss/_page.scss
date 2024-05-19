@@ -11,6 +11,10 @@ header {
     padding-left: 30px;
     padding-right: 30px;
   }
+  @include mini {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   &.scroll-down {
     background: $white;
     .btn-burger {
@@ -34,10 +38,15 @@ header {
     margin-left: auto;
   }
   button {
-    font-size: 13px;
+    color: $white;
+    font-size: 14px;
     border-radius: 50rem;
-    padding: 10px 12px;
+    background: $pri-linear;
     letter-spacing: 1.14px;
+    padding: 10px 12px;
+    @include mini {
+      font-size: 12px;
+    }
   }
 }
 
@@ -492,7 +501,7 @@ section:not(.banner) {
       padding-bottom: 24px;
     }
   }
-  h3 {
+  h3.title {
     width: max-content;
     position: relative;
     letter-spacing: 3.64px;
@@ -673,8 +682,7 @@ section:not(.banner) {
     width: 45%;
     padding: 40px;
     text-align: left;
-    h4 {
-      font-size: 32px;
+    h3 {
       letter-spacing: 3.64px;
       position: relative;
       width: max-content;
@@ -713,8 +721,7 @@ section:not(.banner) {
       text-align: center;
       padding-left: 16px;
       padding-right: 16px;
-      h4 {
-        font-size: 28px;
+      h3 {
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
@@ -763,6 +770,9 @@ section:not(.banner) {
   height: 22px;
   width: 30px;
   margin-left: 44px;
+  @include mini {
+    margin-left: 16px;
+  }
   &:hover span::after {
     width: 30px;
     transition: .3s;

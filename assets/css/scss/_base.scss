@@ -2,7 +2,9 @@ body {
   background: #fff;
   font-family: "proxima-nova", "Roboto";
   line-height: 1.2;
-  overflow-x: hidden;
+  @include mini {
+    font-size: 14px;
+  }
 }
 
 a {
@@ -38,30 +40,45 @@ h1, .h1 {
   @include phone {
    font-size: 36px; 
   }
+  @include mini {
+    font-size: 30px; 
+  }
 }
 h2, .h2 {
   font-size: 38px;
   line-height: 1.8;
   @include phone {
     font-size: 32px; 
-   }
+  }
+  @include mini {
+    font-size: 26px; 
+  }
 }
 h3, .h3 {
   font-size: 28px;
   @include phone {
     font-size: 22px; 
    }
+   @include mini {
+    font-size: 18px; 
+  }
 }
 h4, .h4 {
   font-size: 20px;
   @include phone {
     font-size: 18px; 
   }
+  @include mini {
+    font-size: 16px; 
+  }
 }
 h5, .h5 {
   font-size: 18px;
   @include phone {
     font-size: 16px; 
+  }
+  @include mini {
+    font-size: 14px; 
   }
 }
 
