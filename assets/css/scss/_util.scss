@@ -7,6 +7,10 @@
   }
 }
 
+.d-none {
+  display: none !important;
+}
+
 .stretched-link::after {
   content: "";
   position: absolute;

@@ -12,399 +12,369 @@
 </head>
 
 <body>
-  <div id="loader">
-    <div class="loader"><span></span></div>
+  <div id="app">
+    <div id="loader" :class="{ 'hide': isLoaded, 'd-none': isLoadedDelay }">
+      <div class="loader"><span></span></div>
+    </div>
+    <header :class="{ 'scroll-down' : isScrollOver }">
+      <h1><a href="#" class="logo">logo</a></h1>
+      <div>
+        <button type="button" class="bg-pri-linear text-white">START YOUR PROJECT</button>
+        <a href="#" class="btn-burger" @click.prevent="isMenuShow = true"><span></span></a>
+      </div>
+    </header>
+
+    <nav :class="{ 'show': isMenuShow }">
+      <div class="header">
+        <a href="#">
+          <img src="assets/images/logo-light.svg" height="50" alt="logo">
+        </a>
+        <button type="button" @click="isMenuShow = false"></button>
+      </div>
+      <ul class="card-list">
+        <li class="card" style="background-image: url(assets/images/preview.png)">
+          <div class="card-image">
+            <img src="assets/images/ux.svg" alt="about us">
+          </div>
+          <div class="card-body">
+            <p>EMPOWERING BRANDS</p>
+            <h3>ABOUT US <span></span></h3>
+          </div>
+        </li>
+        <li class="card" style="background-image: url(assets/images/menu2.png)">
+          <div class="card-image">
+            <img src="assets/images/website.svg" alt="careers">
+          </div>
+          <div class="card-body">
+            <p>BE COOL WITH US</p>
+            <h3>CAREERS <span></span></h3>
+          </div>
+        </li>
+        <li class="card" style="background-image: url(assets/images/menu3.png)">
+          <div class="card-image">
+            <img src="assets/images/services.svg" alt="services">
+          </div>
+          <div class="card-body">
+            <p>AREAS OF EXPERTISE</p>
+            <h3>SERVICES <span></span></h3>
+          </div>
+        </li>
+        <li class="card" style="background-image: url(assets/images/menu4.png)">
+          <div class="card-image">
+            <img src="assets/images/ui.svg" alt="works">
+          </div>
+          <div class="card-body">
+            <p>CASE STUDIES</p>
+            <h3>WORKS <span></span></h3>
+          </div>
+        </li>
+        <li class="card" style="background-image: url(assets/images/menu5.png)">
+          <div class="card-image">
+            <img src="assets/images/insights.svg" alt="insights">
+          </div>
+          <div class="card-body">
+            <p>OUR STRATEGIES</p>
+            <h3>INSIGHTS <span></span></h3>
+          </div>
+        </li>
+        <li class="card">
+          <div class="card-body">
+            <p>START YOUR JOURNEY WITH US</p>
+            <h3>CONTACT <span></span></h3>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="banner">
+      <p class="banner-text"><span></span>DIGITAL AGENCY</p>
+      <div class="banner-title-block container">
+        <h2 class="banner-title" data-aos="fade-right">
+          <img src="assets/images/logo-light.svg" alt="logo">
+          WE CREATE <br>
+          AMAZING <br>
+          <span class="highlight">DIGITAL<br> EXPERIENCES</span>
+        </h2>
+      </div>
+      <div class="banner-decoration" data-aos="fade-up" data-aos-offset="0">
+        <img src="assets/images/salad.svg" alt="salad">
+        <p>TASTE US NOW!</p>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="video">
+      <h3 class="mx-auto">ABOUT DIGISALAD <span></span></h3>
+      <div class="container">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/IeIRJ9jZ5Ro?si=vcnikEMUK_GF5bjc"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p>
+          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
+          urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
+          tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a
+          dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam
+          consectetur,
+          eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
+          faucibus.
+        </p>
+        <button type="button" class="btn-square bg-pri">VIEW MORE <span></span></button>
+      </div>
+    </section>
+
+    <section class="block block-right" ref="blockRight">
+      <h3>WRARDS<span></span></h3>
+      <div>
+        <p>
+          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
+          urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
+          tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc.
+        </p>
+        <ul class="award-list">
+          <li class="award-list-item">
+            <img src="assets/images/award.png" width="280" alt="">
+          </li>
+          <li class="award-list-item">
+            <img src="assets/images/award.png" width="280" alt="">
+          </li>
+          <li class="award-list-item">
+            <img src="assets/images/award.png" width="280" alt="">
+          </li>
+          <li class="award-list-item">
+            <img src="assets/images/award.png" width="280" alt="">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="service">
+      <h3 class="dark mx-auto" data-aos="fade-up">OUR INGRADIENTS <span></span></h3>
+      <div class="container" data-aos="fade-up">
+        <p>
+          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
+          urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
+          tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a
+          dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam
+          consectetur,
+          eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
+          faucibus.
+        </p>
+        <button type="button" class="btn-square btn-square-purple bg-purple">
+          OUR SERVICES <span></span>
+        </button>
+        <ul class="service-list">
+          <li v-for="i in serviceList" :key="i.title" class="service-list-item" data-aos="fade-up">
+            <div class="service-list-image">
+              <img :src="`assets/images/${i.img}`" :alt="i.title" />
+            </div>
+            <h4 class="service-list-title" v-html="i.title"></h4>
+            <p class="service-list-text">
+              Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+              tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
+            </p>
+            <button type="button" class="btn-round">view more</button>
+          </li>
+        </ul>
+
+        <a href="#" class="btn-view-more">VIEW MORE DIGISALAD'S INGRADIENTS</a>
+      </div>
+    </section>
+
+    <section class="block block-left" ref="blockLeft">
+      <div>
+        <div class="founder-title">
+          <img src="assets/images/founder.png" alt="founder">
+          <h4>Tony Ng</h4>
+          <em>Founder & Creative Director</em>
+        </div>
+        <div class="founder-content">
+          <img src="assets/images/quote.svg" alt="quote">
+          <p>
+            A great digital work isn't about designing beautiful pages purely. It is about context - how do we deliver
+            the
+            <span>right experience to the right person at the right time.</span> The most
+            important
+            thing is that your work can engage
+            customers at anytime, anywhere and let users experience an entire amazing digital journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand">
+      <h3 class="mx-auto" data-aos="fade-up" data-aos-offset="200">OUR BRAND EXPERIENCE<span></span></h3>
+      <div class="container" data-aos="fade-up" data-aos-offset="200">
+        <p>
+          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
+          urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
+          tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a
+          dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam
+          consectetur,
+          eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
+          faucibus.
+        </p>
+        <img src="assets/images/logos.png" alt="brand-list">
+      </div>
+    </section>
+
+    <section class="carousel" :style="`background-image: url('assets/images/${carouselList[page.now].img}')`">
+      <div class="container">
+        <ul class="carousel-pagination">
+          <span>{{ String(page.now + 1).padStart(2, '0') }}</span>
+          <span></span>
+          <span>{{ String(page.max).padStart(2, '0') }}</span>
+        </ul>
+        <div class="carousel-head">
+          <button type="button" @click="updatePage(page.now - 1)">&lt;</button>
+          <button type="button" @click="updatePage(page.now + 1)">&gt;</button>
+          <div class="carousel-image">
+            <img :src="`assets/images/${carouselList[page.now].img}`" alt="carousel image">
+          </div>
+        </div>
+        <div class="carousel-body">
+          <small>HIGHLIGHTED SHOWCASE</small>
+          <h4>{{ carouselList[page.now].title }}</h4>
+          <p>
+            Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+            tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc
+            eu tellus tortor. Etiam at condimentum nisl.
+          </p>
+        </div>
+        <a href="#" class="btn-square bg-pri">VIEW PROJECT <span></span></a>
+      </div>
+    </section>
   </div>
 
-  <header>
-    <h1><a href="#" class="logo">logo</a></h1>
-    <div>
-      <button type="button" class="bg-pri-linear text-white">START YOUR PROJECT</button>
-      <a href="#" class="btn-burger"><span></span></a>
-    </div>
-  </header>
-
-  <nav>
-    <div class="header">
-      <a href="#">
-        <img src="assets/images/logo-light.svg" height="50" alt="logo">
-      </a>
-      <button type="button" id="closeBtn"></button>
-    </div>
-    <ul class="card-list">
-      <li class="card" style="background-image: url(assets/images/preview.png)">
-        <div class="card-image">
-          <img src="assets/images/ux.svg" alt="about us">
-        </div>
-        <div class="card-body">
-          <p>EMPOWERING BRANDS</p>
-          <h3>ABOUT US <span></span></h3>
-        </div>
-      </li>
-      <li class="card" style="background-image: url(assets/images/menu2.png)">
-        <div class="card-image">
-          <img src="assets/images/website.svg" alt="careers">
-        </div>
-        <div class="card-body">
-          <p>BE COOL WITH US</p>
-          <h3>CAREERS <span></span></h3>
-        </div>
-      </li>
-      <li class="card" style="background-image: url(assets/images/menu3.png)">
-        <div class="card-image">
-          <img src="assets/images/services.svg" alt="services">
-        </div>
-        <div class="card-body">
-          <p>AREAS OF EXPERTISE</p>
-          <h3>SERVICES <span></span></h3>
-        </div>
-      </li>
-      <li class="card" style="background-image: url(assets/images/menu4.png)">
-        <div class="card-image">
-          <img src="assets/images/ui.svg" alt="works">
-        </div>
-        <div class="card-body">
-          <p>CASE STUDIES</p>
-          <h3>WORKS <span></span></h3>
-        </div>
-      </li>
-      <li class="card" style="background-image: url(assets/images/menu5.png)">
-        <div class="card-image">
-          <img src="assets/images/insights.svg" alt="insights">
-        </div>
-        <div class="card-body">
-          <p>OUR STRATEGIES</p>
-          <h3>INSIGHTS <span></span></h3>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card-body">
-          <p>START YOUR JOURNEY WITH US</p>
-          <h3>CONTACT <span></span></h3>
-        </div>
-      </li>
-    </ul>
-  </nav>
-
-  <section class="banner">
-    <p class="banner-text"><span></span>DIGITAL AGENCY</p>
-    <div class="banner-title-block container">
-      <h2 class="banner-title" data-aos="fade-right">
-        <img src="assets/images/logo-light.svg" alt="logo">
-        WE CREATE <br>
-        AMAZING <br>
-        <span class="highlight">DIGITAL<br> EXPERIENCES</span>
-      </h2>
-    </div>
-    <div class="banner-decoration" data-aos="fade-up" data-aos-offset="0">
-      <img src="assets/images/salad.svg" alt="salad">
-      <p>TASTE US NOW!</p>
-      <span></span>
-    </div>
-  </section>
-
-  <section class="video">
-    <h3 class="mx-auto">ABOUT DIGISALAD <span></span></h3>
-    <div class="container">
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/IeIRJ9jZ5Ro?si=vcnikEMUK_GF5bjc"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p>
-        Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
-        urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
-        tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a
-        dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur,
-        eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
-        faucibus.
-      </p>
-      <button type="button" class="btn-square bg-pri">VIEW MORE <span></span></button>
-    </div>
-  </section>
-
-  <section class="block block-right">
-    <h3>WRARDS<span></span></h3>
-    <div>
-      <p>
-        Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
-        urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
-        tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc.
-      </p>
-      <ul class="award-list">
-        <li class="award-list-item">
-          <img src="assets/images/award.png" width="280" alt="">
-        </li>
-        <li class="award-list-item">
-          <img src="assets/images/award.png" width="280" alt="">
-        </li>
-        <li class="award-list-item">
-          <img src="assets/images/award.png" width="280" alt="">
-        </li>
-        <li class="award-list-item">
-          <img src="assets/images/award.png" width="280" alt="">
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="service">
-    <h3 class="dark mx-auto" data-aos="fade-up">OUR INGRADIENTS <span></span></h3>
-    <div class="container" data-aos="fade-up">
-      <p>
-        Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
-        urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
-        tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a
-        dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur,
-        eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
-        faucibus.
-      </p>
-      <button type="button" class="btn-square btn-square-purple bg-purple">
-        OUR SERVICES <span></span>
-      </button>
-      <ul id="service-list" class="service-list"></ul>
-
-      <a href="#" class="btn-view-more">VIEW MORE DIGISALAD'S INGRADIENTS</a>
-    </div>
-  </section>
-
-  <section class="block block-left">
-    <div>
-      <div class="founder-title">
-        <img src="assets/images/founder.png" alt="founder">
-        <h4>Tony Ng</h4>
-        <em>Founder & Creative Director</em>
-      </div>
-      <div class="founder-content">
-        <img src="assets/images/quote.svg" alt="quote">
-        <p>
-          A great digital work isn't about designing beautiful pages purely. It is about context - how do we deliver
-          the
-          <span>right experience to the right person at the right time.</span> The most
-          important
-          thing is that your work can engage
-          customers at anytime, anywhere and let users experience an entire amazing digital journey.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="brand">
-    <h3 class="mx-auto" data-aos="fade-up" data-aos-offset="200">OUR BRAND EXPERIENCE<span></span></h3>
-    <div class="container" data-aos="fade-up" data-aos-offset="200">
-      <p>
-        Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt
-        urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
-        tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a
-        dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur,
-        eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
-        faucibus.
-      </p>
-      <img src="assets/images/logos.png" alt="brand-list">
-    </div>
-  </section>
-
-  <section class="carousel">
-    <div class="container">
-      <ul class="carousel-pagination">
-        <span></span>
-        <span></span>
-        <span></span>
-      </ul>
-      <div class="carousel-head">
-        <button type="button" id="carousel-prev">&lt;</button>
-        <button type="button" id="carousel-next">&gt;</button>
-        <div class="carousel-image">
-          <img src="assets/images/menu4.png" alt="carousel image">
-        </div>
-      </div>
-      <div class="carousel-body">
-        <small>HIGHLIGHTED SHOWCASE</small>
-        <h4>LP CLUB MOBILE APP</h4>
-        <p>
-          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
-          tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc
-          eu tellus tortor. Etiam at condimentum nisl.
-        </p>
-      </div>
-      <a href="#" class="btn-square bg-pri">VIEW PROJECT <span></span></a>
-    </div>
-  </section>
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script>
   <script>
-    const nav = document.querySelector('nav')
-    const burgerBtn = document.querySelector('.btn-burger')
-    const closeBtn = document.querySelector('#closeBtn')
-    const serviceListDom = document.querySelector('#service-list')
-    const blockRSecDom = document.querySelector('section.block-right')
-    const blockLSecDom = document.querySelector('section.block-left')
-
-    burgerBtn.addEventListener('click', e => {
-      e.preventDefault()
-      nav.classList.add('show')
-      document.body.classList.add('overflow-hidden')
-    })
-    closeBtn.addEventListener('click', () => {
-      nav.classList.remove('show')
-      document.body.classList.remove('overflow-hidden')
-    })
-
-    renderServiceList()
-    waitImgLoaded()
-
-    function waitImgLoaded() {
-      const imgs = [...document.querySelectorAll('.block-right img')]
-      const promises = imgs.map(i => {
-        return new Promise(resolve => {
-          const image = new Image()
-          image.src = i.src
-          image.onload = () => {
-            resolve()
-          }
-        })
-      })
-      Promise.all(promises).then(() => {
-        setBlockSibingsPadding(blockRSecDom)
-        setBlockSibingsPadding(blockLSecDom)
-      })
-    }
-
-    let now = max = 0;
-    function updateCarousel() {
-      const carousel = document.querySelector('.carousel')
-      const image = document.querySelector('.carousel-image img')
-      const title = document.querySelector('.carousel-body h4')
-      const pageNow = document.querySelector('.carousel-pagination span:first-child')
-      const pageTotal = document.querySelector('.carousel-pagination span:last-child')
-
-      const carousels = [
-        {
-          img: 'menu4.png',
-          title: 'LP CLUB MOBILE APP',
-          // sub:
-          // drscription:
-        },
-        {
-          img: 'menu3.png',
-          title: 'DIGITAL APP',
-        },
-        {
-          img: 'menu5.png',
-          title: 'SMART AI',
+    const { createApp } = Vue;
+    const app = Vue.createApp({
+      data() {
+        return {
+          serviceList: [
+            {
+              title: 'UX Design',
+              img: 'ux.svg'
+            },
+            {
+              title: 'UI Design',
+              img: 'ui.svg'
+            },
+            {
+              title: 'website <br>development',
+              img: 'website.svg'
+            },
+            {
+              title: 'mobile app <br>development',
+              img: 'app.svg'
+            },
+            {
+              title: 'ecommerce',
+              img: 'ecommerce.svg'
+            },
+            {
+              title: 'customer <br>loyalty',
+              img: 'customer.svg'
+            },
+            {
+              title: 'digital <br>transformation',
+              img: 'transformation.svg'
+            },
+            {
+              title: 'digital <br>marketing',
+              img: 'marketing.svg'
+            },
+            {
+              title: 'BRANDING',
+              img: 'branding.svg'
+            },
+          ],
+          carouselList: [
+            {
+              img: 'menu4.png',
+              title: 'LP CLUB MOBILE APP',
+              // sub:
+              // drscription:
+            },
+            {
+              img: 'menu3.png',
+              title: 'DIGITAL APP',
+            },
+            {
+              img: 'menu5.png',
+              title: 'SMART AI',
+            }
+          ],
+          page: {
+            max: 0,
+            now: 0,
+          },
+          isMenuShow: false,
+          isScrollOver: false,
+          isLoaded: false,
+          isLoadedDelay: false
         }
-      ]
-      max = carousels.length - 1
+      },
+      methods: {
+        waitImgLoaded() {
+          const imgs = [...document.querySelectorAll('.block-right img')]
+          const promises = imgs.map(i => {
+            return new Promise(resolve => {
+              const image = new Image()
+              image.src = i.src
+              image.onload = () => {
+                resolve()
+              }
+            })
+          })
+          Promise.all(promises).then(() => {
+            this.setBlockSibingsPadding(this.$refs.blockRight)
+            this.setBlockSibingsPadding(this.$refs.blockLeft)
+          })
+        },
+        setBlockSibingsPadding(dom) {
+          const prev = dom.previousElementSibling,
+            next = dom.nextElementSibling,
+            prevPadding = getComputedStyle(prev).getPropertyValue('padding-bottom'),
+            nextPadding = getComputedStyle(next).getPropertyValue('padding-top'),
+            domHalfHeight = this.getBlockHeight(dom) / 2 + 'px'
+          prev.style.paddingBottom = `calc(${prevPadding} + ${domHalfHeight})`
+          next.style.paddingTop = `calc(${nextPadding} + ${domHalfHeight})`
+        },
+        getBlockHeight(dom) {
+          return dom.clientHeight
+        },
+        updatePage(page) {
+          if (page <= 0) this.page.now = this.page.max
+          else if (page >= this.page.max) this.page.now = 0
+          else this.page.now = page
+        }
+      },
+      created() {
+        this.page.max = this.carouselList.length
+      },
+      mounted() {
+        this.waitImgLoaded()
 
-      pageNow.textContent = String(now + 1).padStart(2, '0')
-      pageTotal.textContent = String(max + 1).padStart(2, '0')
-      carousel.style.backgroundImage = `url('assets/images/${carousels[now].img}')`
-      image.src = `assets/images/${carousels[now].img}`
-      title.textContent = carousels[now].title
-    }
+        AOS.init({ duration: 800 })
 
-    const prevBtn = document.querySelector('#carousel-prev')
-    const nextBtn = document.querySelector('#carousel-next')
-    prevBtn.addEventListener('click', () => {
-      now -= 1
-      if (now <= 0) now = max
-      updateCarousel()
+        window.addEventListener('scroll', (e) => {
+          this.isScrollOver = window.scrollY > 400
+        })
+
+        window.addEventListener('DOMContentLoaded', () => {
+          this.isLoaded = true
+          setTimeout(() => {
+            this.isLoadedDelay = true
+          }, 1000)
+        })
+      },
     })
-    nextBtn.addEventListener('click', () => {
-      now += 1
-      if (now > max) now = 0
-      updateCarousel()
-    })
-    updateCarousel()
-
-    function renderServiceList() {
-      const services = [
-        {
-          title: 'UX Design',
-          img: 'ux.svg'
-        },
-        {
-          title: 'UI Design',
-          img: 'ui.svg'
-        },
-        {
-          title: 'website <br>development',
-          img: 'website.svg'
-        },
-        {
-          title: 'mobile app <br>development',
-          img: 'app.svg'
-        },
-        {
-          title: 'ecommerce',
-          img: 'ecommerce.svg'
-        },
-        {
-          title: 'customer <br>loyalty',
-          img: 'customer.svg'
-        },
-        {
-          title: 'digital <br>transformation',
-          img: 'transformation.svg'
-        },
-        {
-          title: 'digital <br>marketing',
-          img: 'marketing.svg'
-        },
-        {
-          title: 'BRANDING',
-          img: 'branding.svg'
-        },
-      ]
-      serviceListDom.innerHTML = services.map(i => {
-        return `
-        <li class="service-list-item" data-aos="fade-up">
-        <div class="service-list-image">
-          <img src="assets/images/${i.img}" alt="${i.title}" />
-        </div>
-        <h4 class="service-list-title">${i.title}</h4>
-        <p class="service-list-text">
-          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
-        </p>
-        <button type="button" class="btn-round">view more</button>
-      </ >
-        `
-      }).join('')
-    }
-
-    function setBlockSibingsPadding(dom) {
-      function getBlockHeight(dom) {
-        return dom.clientHeight
-      }
-
-      const prev = dom.previousElementSibling,
-        next = dom.nextElementSibling,
-        prevPadding = getComputedStyle(prev).getPropertyValue('padding-bottom'),
-        nextPadding = getComputedStyle(next).getPropertyValue('padding-top'),
-        domHalfHeight = getBlockHeight(dom) / 2 + 'px'
-      console.log(prevPadding, domHalfHeight)
-      prev.style.paddingBottom = `calc(${prevPadding} + ${domHalfHeight})`
-      next.style.paddingTop = `calc(${nextPadding} + ${domHalfHeight})`
-    }
-
-    window.addEventListener('scroll', (e) => {
-      const header = document.querySelector('header')
-      if (window.scrollY > 400) header.classList.add('scroll-down')
-      else header.classList.remove('scroll-down')
-    })
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const loader = document.querySelector('#loader')
-      loader.classList.add('hide')
-      setTimeout(() => {
-        loader.style.display = 'none'
-      }, 1000)
-    })
-
-    AOS.init({
-      duration: 800,
-    });
+    app.mount('#app');
   </script>
 </body>
 

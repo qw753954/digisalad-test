@@ -108,6 +108,10 @@ table {
   background: #FFBC58;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .stretched-link::after {
   content: "";
   position: absolute;
@@ -479,6 +483,9 @@ nav .card:last-child p {
   text-align: center;
   padding-bottom: 60px !important;
   position: relative;
+}
+.banner-decoration img {
+  margin-bottom: 6px;
 }
 .banner-decoration p {
   color: white;
