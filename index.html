@@ -25,7 +25,7 @@
     </header>
 
     <nav :class="{ 'show': isMenuShow }">
-      <div class="header">
+      <div class="navbar">
         <a href="#">
           <img src="assets/images/logo-light.svg" height="50" alt="logo">
         </a>
@@ -87,6 +87,9 @@
     </nav>
 
     <section class="banner">
+      <div class="video-bg-container">
+        <video src="assets/video/video.mp4" autoplay muted></video>
+      </div>
       <p class="banner-text"><span></span>DIGITAL AGENCY</p>
       <div class="banner-title-block container">
         <h2 class="banner-title" data-aos="fade-right">
@@ -317,6 +320,11 @@
           isScrollOver: false,
           isLoaded: false,
           isLoadedDelay: false
+        }
+      },
+      watch: {
+        isMenuShow(n) {
+          document.body.style.overflow = n ? 'hidden' : 'auto'
         }
       },
       methods: {
